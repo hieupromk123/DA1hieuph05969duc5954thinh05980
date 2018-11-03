@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/googleg_standard_color_18"
+            android:title="@string/login"></item>
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_main"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/main" />
+        <item
+            android:id="@+id/nav_cpu"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/cpu" />
+        <item
+            android:id="@+id/nav_ram"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/ram" />
+        <item
+            android:id="@+id/nav_psu"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/psu" />
+        <item
+            android:id="@+id/nav_ssd"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/ssd" />
+        <item
+            android:id="@+id/nav_hdd"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/hdd" />
+        <item
+            android:id="@+id/nav_case"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/case1" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_information"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/information" />
+            <item
+                android:id="@+id/nav_exit"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/exit" />
+        </menu>
+    </item>
+
+</menu>
