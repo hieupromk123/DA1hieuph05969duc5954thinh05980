@@ -85,7 +85,7 @@
                                         Toast.makeText(SignupActivity.this, "Authentication failed." + task.getException(),
                                                 Toast.LENGTH_SHORT).show();
                                     } else {
-                                        startActivity(new Intent(SignupActivity.this, MainActivity.class));
+                                        startActivity(new Intent(SignupActivity.this, ManHinhChinhActivity.class));
                                         finish();
                                     }
                                 }
