@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.ViewFlipper;
@@ -27,23 +28,27 @@ import java.util.ArrayList;
 public class ManHinhChinhActivity extends AppCompatActivity  {
     private DrawerLayout mDrawerLayout;
     private ViewFlipper viewfliper;
-    private RecyclerView recyclerview;
+    private Toolbar toolbar;
+    private FrameLayout contentFrame;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
         Anhxa();
-        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ActionBar actionbar = getSupportActionBar();
-        actionbar.setDisplayHomeAsUpEnabled(true);
-        mDrawerLayout = findViewById(R.id.drawer_layout);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayUseLogoEnabled(true);
+            getSupportActionBar().setTitle("Bán linh kiện điện tử");
+        }
+//        ActionBar actionbar = getSupportActionBar();
+//        actionbar.setDisplayHomeAsUpEnabled(true);
         ActionViewFliper();
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                         switch(menuItem.getItemId()){
                             case R.id.nav_login:
                                 Intent intent1 = new Intent(ManHinhChinhActivity.this,LoginActivity.class);
@@ -91,7 +96,9 @@ public class ManHinhChinhActivity extends AppCompatActivity  {
 
     private void Anhxa() {
         viewfliper =  findViewById(R.id.viewfliper);
-        recyclerview =  findViewById(R.id.recyclerview);
+        contentFrame = findViewById(R.id.content_frame);
+        toolbar =  findViewById(R.id.toolbar);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
     }
 
 //    @Override
