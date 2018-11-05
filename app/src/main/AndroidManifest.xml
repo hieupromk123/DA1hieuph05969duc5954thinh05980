@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.acer.da1hieuph05969duc5954thinh05980">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,26 +13,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
+        </activity>
+        <activity android:name=".activity.SignupActivity" />
+        <activity android:name=".activity.LoginActivity" ></activity>
+        <activity android:name=".activity.Main1Activity" />
+        <activity android:name=".activity.CPUActivity" />
+        <activity android:name=".activity.RamActivity" />
+        <activity android:name=".activity.HddActivity" />
+        <activity android:name=".activity.SsdActivity" />
+        <activity android:name=".activity.NguonActivity">
 
         </activity>
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity" >
+        <activity android:name=".activity.GpuActivity"></activity>
+        <activity android:name=".activity.ResetPasswordActivity" />
+        <activity android:name=".activity.ManHinhChinhActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".ManHinhChinhActivity" >
+        <activity android:name=".activity.InformationActivity" />
 
-        </activity>
-        <activity android:name=".InformationActivity" />
         <activity
-            android:name=".NavigationActivity"
+            android:name=".activity.NavigationActivity"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>

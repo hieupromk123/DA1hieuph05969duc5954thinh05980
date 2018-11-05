@@ -1,26 +1,23 @@
-package com.example.acer.da1hieuph05969duc5954thinh05980;
+package com.example.acer.da1hieuph05969duc5954thinh05980.activity;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.ViewFlipper;
+
+import com.example.acer.da1hieuph05969duc5954thinh05980.R;
+import com.example.acer.da1hieuph05969duc5954thinh05980.adapter.GpuAdapter;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -57,6 +54,35 @@ public class ManHinhChinhActivity extends AppCompatActivity  {
 //                                dialog.setContentView(R.layout.activity_login);
 //                                dialog.show();
                                 break;
+                            case R.id.nav_main:
+                                Intent intent2 = new Intent(ManHinhChinhActivity.this,Main1Activity.class);
+                                startActivity(intent2);
+                                break;
+                            case R.id.nav_cpu:
+                                Intent intent3 = new Intent(ManHinhChinhActivity.this,CPUActivity.class);
+                                startActivity(intent3);
+                                break;
+                            case R.id.nav_gpu:
+                                Intent intent8 = new Intent(ManHinhChinhActivity.this,GpuAdapter.class);
+                                startActivity(intent8);
+                                break;
+                            case R.id.nav_ram:
+                                Intent intent5 = new Intent(ManHinhChinhActivity.this,RamActivity.class);
+                                startActivity(intent5);
+                                break;
+                            case R.id.nav_psu:
+                                Intent intent4 = new Intent(ManHinhChinhActivity.this,NguonActivity.class);
+                                startActivity(intent4);
+                                break;
+                            case R.id.nav_ssd:
+                                Intent intent6 = new Intent(ManHinhChinhActivity.this,SsdActivity.class);
+                                startActivity(intent6);
+                                break;
+                            case R.id.nav_hdd:
+                                Intent intent7 = new Intent(ManHinhChinhActivity.this,HddActivity.class);
+                                startActivity(intent7);
+                                break;
+
                             case R.id.nav_information:
                                 Intent intent = new Intent(ManHinhChinhActivity.this,InformationActivity.class);
                                 startActivity(intent);

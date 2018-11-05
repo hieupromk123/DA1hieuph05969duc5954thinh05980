@@ -7,7 +7,8 @@
         <item
             android:id="@+id/nav_login"
             android:icon="@drawable/googleg_standard_color_18"
-            android:title="@string/login"></item>
+            android:title="@string/login" >
+        </item>
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
@@ -20,6 +21,10 @@
             android:id="@+id/nav_cpu"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/cpu" />
+        <item
+            android:id="@+id/nav_gpu"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/gpu" />
         <item
             android:id="@+id/nav_ram"
             android:icon="@drawable/ic_menu_manage"
