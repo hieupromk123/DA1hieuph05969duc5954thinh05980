@@ -11,24 +11,34 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.Switch;
+import android.widget.ViewFlipper;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 
 public class ManHinhChinhActivity extends AppCompatActivity  {
     private DrawerLayout mDrawerLayout;
+    private ViewFlipper viewfliper;
+    private RecyclerView recyclerview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
+        Anhxa();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
-
         mDrawerLayout = findViewById(R.id.drawer_layout);
-
+        ActionViewFliper();
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -50,16 +60,38 @@ public class ManHinhChinhActivity extends AppCompatActivity  {
                                 Exit();
                                 break;
                         }
-
                         menuItem.setChecked(true);
-
                         mDrawerLayout.closeDrawers();
-
-
                         return true;
                     }
                 });
 
+    }
+
+    private void ActionViewFliper() {
+        ArrayList<String> mangquangcao = new ArrayList<>();
+        mangquangcao.add("http://www.pcworld.com.vn/files/articles/2015/1238315/01-flickr-large.jpg");
+        mangquangcao.add("http://www.pcworld.com.vn/files/articles/2015/1238315/01-flickr-large.jpg");
+        mangquangcao.add("http://www.pcworld.com.vn/files/articles/2015/1238315/01-flickr-large.jpg");
+        mangquangcao.add("http://www.pcworld.com.vn/files/articles/2015/1238315/01-flickr-large.jpg");
+        for (int i =0;i<mangquangcao.size();i++){
+            ImageView imageView = new ImageView(getApplicationContext());
+            Picasso.with(getApplicationContext()).load(mangquangcao.get(i)).into(imageView);
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            viewfliper.addView(imageView);
+
+        }
+        viewfliper.setFlipInterval(5000);
+        viewfliper.setAutoStart(true);
+        Animation animation_slide_in = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_in_right);
+        Animation animation_slide_out = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_out_right);
+        viewfliper.setInAnimation(animation_slide_in);
+        viewfliper.setOutAnimation(animation_slide_out);
+    }
+
+    private void Anhxa() {
+        viewfliper =  findViewById(R.id.viewfliper);
+        recyclerview =  findViewById(R.id.recyclerview);
     }
 
 //    @Override
